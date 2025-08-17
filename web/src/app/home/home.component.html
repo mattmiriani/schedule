@@ -1,0 +1,9 @@
+<h1>Home</h1>
+
+@if (auth.isLoggedIn()) {
+  <p>Bem-vindo {{ auth.getUserName() }}</p>
+  <a routerLink="/logout">Logout</a>
+} @else {
+  <p>Você não está logado.</p>
+  <a routerLink="/login">Login</a>
+}
