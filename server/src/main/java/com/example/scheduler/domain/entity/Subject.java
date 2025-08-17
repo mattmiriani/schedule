@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "subject")
+//@Entity(name = "subject")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

@@ -1,9 +1,10 @@
 spring:
   application:
     name: Scheduler
+
   security:
     oauth2:
-      resource server:
+      resource-server:
         jwt:
           issuer-uri: http://localhost:8443/realms/oauth2-demos
 
@@ -39,4 +40,3 @@ logging:
     org.springframework: WARN
     org.hibernate: WARN
     org.hibernate.SQL: ERROR
-
