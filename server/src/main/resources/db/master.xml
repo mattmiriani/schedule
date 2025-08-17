@@ -1,0 +1,88 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
+
+    <property name="arquivo" value="blob" dbms="h2,oracle"/>
+    <property name="arquivo" value="oid" dbms="postgresql"/>
+    <property name="texto" value="clob" dbms="h2,oracle"/>
+    <property name="texto" value="oid" dbms="postgresql"/>
+    <property name="text" value="text" dbms="postgresql"/>
+    <property name="text" value="clob" dbms="h2,oracle"/>
+    <property name="text" value="clob" dbms="h2,oracle"/>
+
+    <property name="monetario" value="java.sql.Types.NUMERIC(24,4)" dbms="h2,oracle,postgresql"/>
+    <property name="decimal" value="java.sql.Types.NUMERIC(19,2)" dbms="h2,oracle,postgresql"/>
+    <property name="decimallongo" value="java.sql.Types.NUMERIC(24,8)" dbms="h2,oracle,postgresql"/>
+    <property name="numero" value="java.sql.Types.NUMERIC(19,0)" dbms="h2,oracle,postgresql"/>
+    <property name="numerico" value="java.sql.Types.NUMERIC(10,0)" dbms="h2,oracle,postgresql"/>
+    <property name="numerico2" value="java.sql.Types.NUMERIC(2,0)" dbms="h2,oracle,postgresql"/>
+    <property name="numerico4" value="java.sql.Types.NUMERIC(4,0)" dbms="h2,oracle,postgresql"/>
+    <property name="numerico9" value="java.sql.Types.NUMERIC(9,0)" dbms="h2,oracle,postgresql"/>
+    <property name="numerico10_2" value="java.sql.Types.NUMERIC(10,2)" dbms="h2,oracle,postgresql"/>
+    <property name="numerico14_2" value="java.sql.Types.NUMERIC(14,2)" dbms="h2,oracle,postgresql"/>
+    <property name="numerico30" value="java.sql.Types.NUMERIC(30,0)" dbms="h2,oracle,postgresql"/>
+    <property name="numerico26" value="java.sql.Types.NUMERIC(26,0)" dbms="h2,oracle,postgresql"/>
+    <property name="numerico25" value="java.sql.Types.NUMERIC(25,0)" dbms="h2,oracle,postgresql"/>
+    <property name="inteiro" value="java.sql.Types.NUMERIC(20,0)" dbms="h2,oracle,postgresql"/>
+    <property name="inteiromenor" value="java.sql.Types.NUMERIC(5,0)" dbms="h2,oracle,postgresql"/>
+    <property name="percentual" value="java.sql.Types.NUMERIC(15,4)" dbms="h2,oracle,postgresql"/>
+    <property name="decimal4" value="java.sql.Types.NUMERIC(10,4)" dbms="h2,oracle,postgresql"/>
+    <property name="decimal6" value="java.sql.Types.NUMERIC(10,6)" dbms="h2,oracle,postgresql"/>
+    <property name="inteiromaior" value="bigint" dbms="h2,oracle,postgresql"/>
+
+    <property name="numeric10.type" value="decimal(10,0)" dbms="h2" />
+    <property name="numeric10_2.type" value="decimal(10,2)" dbms="h2" />
+    <property name="numeric15_2.type" value="decimal(15,2)" dbms="h2" />
+    <property name="text" value="varchar(32000)" dbms="h2"/>
+    <property name="time.type" value="java.sql.Types.TIME" dbms="h2,oracle,postgresql"/>
+
+    <property name="hora" value="java.sql.Types.TIME" dbms="h2,oracle,postgresql"/>
+    <property name="data" value="java.sql.Types.DATE" dbms="h2,oracle,postgresql"/>
+    <property name="datahora" value="java.sql.Types.TIMESTAMP" dbms="h2,oracle,postgresql"/>
+    <property name="datahorazone" value="java.sql.Types.TIMESTAMP_WITH_TIMEZONE" dbms="h2,oracle,postgresql"/>
+
+    <property name="sigla" value="java.sql.Types.VARCHAR(3)" dbms="oracle,postgresql,h2"/>
+    <property name="descricaoenum" value="java.sql.Types.VARCHAR(30)" dbms="oracle,postgresql,h2"/>
+    <property name="descricao2" value="java.sql.Types.VARCHAR(2)" dbms="oracle,postgresql,h2"/>
+    <property name="descricao4" value="java.sql.Types.VARCHAR(4)" dbms="oracle,postgresql,h2"/>
+    <property name="descricao10" value="java.sql.Types.VARCHAR(10)" dbms="oracle,postgresql,h2"/>
+    <property name="descricao14" value="java.sql.Types.VARCHAR(14)" dbms="oracle,postgresql,h2"/>
+
+    <property name="descricaocurta" value="java.sql.Types.VARCHAR(20)" dbms="h2,oracle,postgresql"/>
+    <property name="descricao30" value="java.sql.Types.VARCHAR(30)" dbms="h2,oracle,postgresql"/>
+    <property name="descricao40" value="java.sql.Types.VARCHAR(40)" dbms="h2,oracle,postgresql"/>
+    <property name="descricao50" value="java.sql.Types.VARCHAR(50)" dbms="h2,oracle,postgresql"/>
+    <property name="descricao60" value="java.sql.Types.VARCHAR(60)" dbms="h2,oracle,postgresql"/>
+    <property name="descricao100" value="java.sql.Types.VARCHAR(100)" dbms="h2,oracle,postgresql"/>
+    <property name="descricao150" value="java.sql.Types.VARCHAR(150)" dbms="h2,oracle,postgresql"/>
+    <property name="descricao200" value="java.sql.Types.VARCHAR(200)" dbms="h2,oracle,postgresql"/>
+    <property name="descricaomedia" value="java.sql.Types.VARCHAR(70)" dbms="h2,oracle,postgresql"/>
+    <property name="descricaolonga" value="java.sql.Types.VARCHAR(255)" dbms="h2,oracle,postgresql"/>
+    <property name="descricaolonga300" value="java.sql.Types.VARCHAR(300)" dbms="h2,oracle,postgresql"/>
+    <property name="descricaolonga400" value="java.sql.Types.VARCHAR(400)" dbms="h2,oracle,postgresql"/>
+    <property name="descricaolonga500" value="java.sql.Types.VARCHAR(500)" dbms="h2,oracle,postgresql"/>
+    <property name="descricaoextralonga" value="java.sql.Types.VARCHAR(3000)" dbms="h2,oracle,postgresql"/>
+    <property name="descricao4000" value="java.sql.Types.VARCHAR(4000)" dbms="h2,oracle,postgresql"/>
+    <property name="descricao1000" value="java.sql.Types.VARCHAR(1000)" dbms="h2,oracle,postgresql"/>
+    <property name="descricao2000" value="java.sql.Types.VARCHAR(2000)" dbms="h2,oracle,postgresql"/>
+    <property name="descricao12000" value="java.sql.Types.VARCHAR(12000)" dbms="h2,oracle,postgresql"/>
+
+    <property name="logico" value="java.sql.Types.BOOLEAN" dbms="h2,oracle,postgresql"/>
+
+    <property name="uuid" value="uuid" dbms="postgresql, h2"/>
+    <property name="uuid" value="RAW(16)" dbms="oracle"/>
+
+    <property name="uuid_default" value="uuid_generate_v1()" dbms="postgresql"/>
+    <property name="uuid_default" value="RANDOM_UUID()" dbms="h2"/>
+    <property name="uuid_default" value="sys_guid()" dbms="oracle"/>
+
+    <property name="blob.type" value="blob" dbms="oracle" />
+    <property name="blob.type" value="binary" dbms="h2" />
+    <property name="blob.type" value="bytea" dbms="postgresql" />
+
+    <property name="json" value="blob" dbms="oracle"/>
+    <property name="json" value="json" dbms="postgresql"/>
+    <property name="json" value="clob" dbms="h2"/>
+
+    <includeAll path="changelog" relativeToChangelogFile="true"/>
+</databaseChangeLog>

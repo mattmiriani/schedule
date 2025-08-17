@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+
+  # Seu banco de dados atual
+  postgres:
+    image: postgres:17.5
+    container_name: scheduler-db
+    restart: always
+    environment:
+      POSTGRES_DB: scheduler
+      POSTGRES_USER: scheduler
+      POSTGRES_PASSWORD: scheduler
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Banco de dados do Keycloak
+  keycloak-db:
+    image: postgres:17.5
+    container_name: keycloak-db
+    restart: always
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
+    ports:
+      - "5433:5432"
+    volumes:
+      - keycloak_data:/var/lib/postgresql/data
+
+  # Serviço do Keycloak
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak
+    restart: always
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://keycloak-db:5432/keycloak
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: keycloak
+      KC_HTTP_PORT: 8080
+      KC_PROXY: passthrough
+    ports:
+      - "8443:8080"
+    depends_on:
+      - keycloak-db
+    volumes:
+      - ./keycloak-import:/opt/keycloak/data/import
+    command: start-dev --import-realm
+
+volumes:
+  postgres_data:
+  keycloak_data:

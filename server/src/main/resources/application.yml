@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: Scheduler
+  security:
+    oauth2:
+      resource server:
+        jwt:
+          issuer-uri: http://localhost:8443/realms/oauth2-demos
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/scheduler
+    username: scheduler
+    password: scheduler
+    driver-class-name: org.postgresql.Driver
+
+  liquibase:
+    change-log: classpath:db/master.xml
+    default-schema: public
+    analytics-enabled: false
+    show-summary: off
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        default_schema: public
+        format_sql: false
+    open-in-view: false
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: WARN
+    liquibase: INFO
+    org.springframework: WARN
+    org.hibernate: WARN
+    org.hibernate.SQL: ERROR
+
