@@ -4,6 +4,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideOAuthClient } from 'angular-oauth2-oidc';
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app/app.routes';
+import 'twind/shim'
+import './app/twind.config'
 
 bootstrapApplication(AppComponent, {
   providers: [

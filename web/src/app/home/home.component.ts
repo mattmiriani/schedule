@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
-import {RouterLink} from '@angular/router';
+import { Navbar } from "../components/navbar/navbar";
 
 @Component({
   selector: 'app-home',
   imports: [
-    RouterLink
+      Navbar
   ],
   templateUrl: './home.component.html'
 })
